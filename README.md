@@ -42,7 +42,23 @@ The dashboard displays:
 - Hypertension count
 - Heart disease count
 
+ ### Project Structure Section
+ project/
+│── app/
+│   ├── auth/
+│   ├── patients/
+│   ├── main/
+│   ├── templates/
+│   ├── static/
+│   ├── mongo.py
+│   ├── __init__.py
+│── import_patients.py
+│── requirements.txt
+│── README.md
+
+
 ---
+
 
 
 
