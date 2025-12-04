@@ -1,0 +1,114 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <h2 class="mb-4 fw-bold">Patients</h2>
+
+    <!-- Filters -->
+    <form method="GET" class="row g-3 mb-4">
+
+        <div class="col-md-4">
+            <input type="text" name="search" value="{{ search }}" placeholder="Search patient ID..." class="form-control">
+        </div>
+
+        <div class="col-md-3">
+            <select name="gender" class="form-select">
+                <option value="">Gender</option>
+                <option value="Male" {% if gender == "Male" %}selected{% endif %}>Male</option>
+                <option value="Female" {% if gender == "Female" %}selected{% endif %}>Female</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <select name="hypertension" class="form-select">
+                <option value="">Hypertension</option>
+                <option value="1" {% if hypertension == "1" %}selected{% endif %}>Yes</option>
+                <option value="0" {% if hypertension == "0" %}selected{% endif %}>No</option>
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <button class="btn btn-primary w-100">Apply</button>
+        </div>
+    </form>
+
+    <!-- Patient Table -->
+    <div class="card shadow-sm">
+
+        <table class="table table-hover align-middle">
+            <thead class="table-primary">
+                <tr>
+                    <th>
+                        <a href="?sort=id&order={{ 'desc' if order=='asc' else 'asc' }}">ID</a>
+                    </th>
+
+                    <th>
+                        <a href="?sort=age&order={{ 'desc' if order=='asc' else 'asc' }}">Age</a>
+                    </th>
+
+                    <th>Gender</th>
+
+                    <th>Hypertension</th>
+
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for p in patients %}
+                <tr>
+                    <td>{{ p["id"] }}</td>
+
+                    <td>
+                        {{ p["age"] }}
+                    </td>
+
+                    <td>
+                        <span class="badge bg-info">{{ p["gender"] }}</span>
+                    </td>
+
+                    <td>
+                        {% if p["hypertension"] == 1 %}
+                            <span class="badge bg-danger">Yes</span>
+                        {% else %}
+                            <span class="badge bg-success">No</span>
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        <a href="{{ url_for('patients.view_patient', id=p['_id']) }}"
+                           class="btn btn-sm btn-outline-primary">View</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Pagination -->
+    <nav class="mt-3">
+        <ul class="pagination">
+
+            {% if page > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page - 1 }}">Previous</a>
+                </li>
+            {% endif %}
+
+            <li class="page-item active">
+                <span class="page-link">{{ page }}</span>
+            </li>
+
+            {% if (page * per_page) < total %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page + 1 }}">Next</a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </nav>
+
+</div>
+{% endblock %}

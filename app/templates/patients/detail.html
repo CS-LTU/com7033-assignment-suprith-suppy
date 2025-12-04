@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+
+<h2>Patient Details</h2>
+
+<ul class="list-group">
+    {% for key, value in patient.items() if key != "_id" %}
+    <li class="list-group-item"><strong>{{ key }}:</strong> {{ value }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('patients.edit_patient', id=patient._id) }}" class="btn btn-warning mt-3">Edit</a>
+
+<a href="{{ url_for('patients.list_patients') }}" class="btn btn-secondary mt-3">Back</a>
+
+{% endblock %}
