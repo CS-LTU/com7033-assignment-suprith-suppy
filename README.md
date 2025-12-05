@@ -1,120 +1,174 @@
-##🏥 Healthcare Flask App
-Healthcare Patient Management System
+# 🏥 Healthcare Flask App
+## Healthcare Patient Management System
 
-Secure Flask Web Application | MongoDB + SQLite | Authentication | Dashboard Analytics | Unit Testing
+**Secure Flask Web Application | MongoDB + SQLite | Authentication | Dashboard Analytics | Unit Testing**
 
-📌 Overview
+---
 
-This project is a secure, full-stack healthcare data management system built using Flask, integrating both MongoDB (for patient data) and SQLite (for user authentication).
+## 📌 Overview
 
-The system allows healthcare professionals to log in, manage patients, analyze trends, and ensure secure handling of sensitive medical data.
+This project is a **secure, full-stack healthcare data management system** built using **Flask**, integrating:
 
-This application supports:
+- **MongoDB** → Patient data storage  
+- **SQLite** → User authentication system  
 
-🔐 Secure user authentication (SQLite + Flask-Login)
+The system enables healthcare professionals to:
 
-🗄️ Patient record management (MongoDB)
+- Log in securely  
+- Manage patient information  
+- Perform CRUD operations  
+- View an analytics dashboard  
+- Ensure ethical and secure handling of medical records  
 
-✏️ Full CRUD operations (Create, Read, Update, Delete)
+---
 
-📊 Analytics dashboard (age averages, gender distribution, hypertension & heart disease stats)
+## 🚀 Features
 
-⚡ Secure coding practices (CSRF protection, bcrypt hashing, safe data handling)
+### 🔐 Secure User Authentication (SQLite + Flask-Login)
 
-🧪 Automated Unit Testing (pytest)
+- User Registration  
+- User Login & Logout  
+- Password hashing using **Flask-Bcrypt**  
+- CSRF protection with **Flask-WTF**  
+- Session management  
 
-🛡 Ethical handling of health data following best practices
+---
 
-🚀 Features
-👤 User Authentication (SQLite)
+### 🩺 Patient Management (MongoDB)
 
-User Registration
+Full CRUD functionality:
 
-Secure Login / Logout
+- ➕ Add new patient  
+- ✏️ Edit patient details  
+- 👁️ View patient  
+- ❌ Delete patient  
+- 🔍 Search patients  
+- 📄 Pagination  
+- 📥 Import CSV dataset → MongoDB  
+- Responsive and accessible UI  
 
-Password hashing using Flask-Bcrypt
+---
 
-CSRF Protection (Flask-WTF)
+### 📊 Dashboard & Analytics
 
-Session management with Flask-Login
+The dashboard visually displays patient trends:
 
-🩺 Patient Management (MongoDB)
+- 👥 Total number of patients  
+- 📈 Average age  
+- 🚻 Gender distribution  
+- ❤️ Hypertension count  
+- 💓 Heart disease count  
 
-Add New Patient
+---
 
-Edit Patient
+## 📁 Project Structure
 
-View Patient Details
-
-Delete Patient
-
-Search & Pagination
-
-Import patient dataset from CSV → MongoDB
-
-Clean and accessible UI
-
-📊 Dashboard & Analytics
-
-The dashboard displays:
-
-👥 Total number of patients
-
-📈 Average patient age
-
-🚻 Gender distribution (Male / Female / Other / Unknown)
-
-❤️ Hypertension count
-
-💓 Heart disease count
-
-Displayed using responsive cards and modern UI styling.
-
-📁 Project Structure
 project/
 │── app/
-│   ├── auth/              # Authentication (login, register)
-│   ├── patients/          # CRUD patient management
-│   ├── main/              # Dashboard, homepage
-│   ├── templates/         # Jinja2 HTML templates
-│   ├── static/            # CSS, JS, images
-│   ├── mongo.py           # MongoDB connection handler
-│   ├── __init__.py        # App factory
+│ ├── auth/ # Login, Register, Authentication logic
+│ ├── patients/ # CRUD patient management
+│ ├── main/ # Dashboard, Index routes
+│ ├── templates/ # Jinja2 HTML templates
+│ ├── static/ # Images, CSS, JS
+│ ├── mongo.py # MongoDB connection functions
+│ ├── init.py # Flask app factory
 │
-│── import_patients.py     # CSV → MongoDB import script
-│── requirements.txt       # Python dependencies
-│── README.md              # Project documentation
-│── tests/                 # Unit tests (pytest)
-
-🧪 Unit Testing 
-
-Unit tests are implemented using pytest.
-
-Included Tests:
-
-✔ Register page loads
-✔ Login page loads
-✔ Valid login test
-✔ Invalid login test
+│── import_patients.py # CSV → MongoDB import script
+│── requirements.txt # Python dependencies
+│── tests/ # Unit tests (pytest)
+│── README.md # Project documentation
 
 
-🛡 Security Practices Implemented
+---
 
-❗ No plain-text passwords (bcrypt hashing)
+## 🧪 Unit Testing
 
-🛡 CSRF protection for all form submissions
+Unit tests are implemented using **pytest**.
 
-🔐 Session cookies secured
+### ✔ Included Tests
 
-🧹 Input validation + safe rendering
+- Register page loads  
+- Login page loads  
+- Valid login test  
+- Invalid login test  
 
-✔ Ethical handling: No unnecessary patient data exposure
+### ▶ Run tests:
 
-👤 Author
 
-SUPRITH PATLOLLA
-LEEDS TRINITY UNIVERSITY
-MODULE — COM7033: SECURE SOFTWARE DEVELOPMENT
+All tests pass successfully.
+
+---
+
+## 🛡 Security Practices Implemented
+
+### 🔒 Password Security
+- Password hashing using bcrypt  
+- No plain-text password storage  
+
+### 🛡 Form & CSRF Security
+- CSRF protection enabled  
+- Input validation  
+
+### 🔐 Session Security
+- Secure session cookies  
+- Restricted access to dashboard and patient pages  
+
+### 📘 Ethical Data Handling
+- No unnecessary exposure of patient details  
+- Sensitive data minimized everywhere possible  
+
+---
+
+## 🛠 Technologies Used
+
+| Component | Technology |
+|----------|------------|
+| Backend Framework | Flask |
+| Database (Users) | SQLite |
+| Database (Patients) | MongoDB |
+| Authentication | Flask-Login |
+| Form Security | Flask-WTF |
+| Password Security | Bcrypt |
+| UI Framework | Bootstrap |
+| Testing | pytest |
+| Version Control | Git & GitHub |
+
+---
+
+### 3️⃣ Open in Browser
+
+http://127.0.0.1:5000/
+
+
+---
+
+## 📤 GitHub Submission Status
+
+Your repository now includes:
+
+✔ Source Code  
+✔ Working Flask Application  
+✔ CRUD Patient Management  
+✔ MongoDB + SQLite Integration  
+✔ Unit Tests (All Passed)  
+✔ README Documentation  
+✔ Requirements.txt  
+
+Your project is **ready for Phase 2 assessment submission**.
+
+---
+
+## 👤 Author
+
+**SUPRITH PATLOLLA**  
+*Leeds Trinity University*  
+**Module: COM7033 — Secure Software Development**
+
+---
+
+
+
+
 
 
 
